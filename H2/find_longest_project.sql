@@ -2,6 +2,7 @@
 -- GoIt Java Developer 14. Module 3 homewok
 -- Kostyantyn Oparnykov
 -- Find longest project duration in month(task 5)
+-- H2 
 -------------------------------------------------
 
 WITH ProjectDurations AS (

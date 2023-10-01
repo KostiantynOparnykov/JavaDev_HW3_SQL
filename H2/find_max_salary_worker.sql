@@ -2,6 +2,7 @@
 -- GoIt Java Developer 14. Module 3 homewok
 -- Kostyantyn Oparnykov
 -- Find worker with max salary (task 3)
+-- H2
 -------------------------------------------
 
 SELECT name, salary

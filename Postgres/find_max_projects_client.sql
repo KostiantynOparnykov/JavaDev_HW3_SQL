@@ -2,6 +2,7 @@
 -- GoIt Java Developer 14. Module 3 homewok
 -- Kostyantyn Oparnykov
 -- Find client with max projects count (task 4)
+-- Postgres
 -----------------------------------------------
 
 SELECT client.name, COUNT(project.id) AS project_count

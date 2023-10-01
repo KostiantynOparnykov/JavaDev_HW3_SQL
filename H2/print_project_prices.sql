@@ -2,6 +2,7 @@
 -- GoIt Java Developer 14. Module 3 homewok
 -- Kostyantyn Oparnykov
 -- Calculate total price for each project(task 7)
+-- H2
 -------------------------------------------------
 
 SELECT 

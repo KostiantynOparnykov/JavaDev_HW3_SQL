@@ -2,28 +2,38 @@
 -- GoIt Java Developer 14. Module 3 homewok
 -- Kostyantyn Oparnykov
 -- DB creation for MegaSoft company (task 1)
+-- Postgres
 --------------------------------------------
+
+DROP TABLE IF EXISTS
+   worker,
+   client,
+   project,
+   project_worker; 
+   
+DROP TYPE IF EXISTS worker_level;
+CREATE TYPE  worker_level AS ENUM ('Trainee', 'Junior', 'Middle', 'Senior');
 
 CREATE TABLE Worker
 (
-   id INT NOT NULL,
+   id SERIAL NOT NULL,
    name VARCHAR CHECK (LENGTH(name) >= 2 and LENGTH(name) <=1000),
    birthday DATE,
-   level 	ENUM ('Trainee', 'Junior', 'Middle', 'Senior') NOT NULL,
+   level worker_level NOT NULL,
    salary INT CHECK (salary >= 100 AND salary <= 100000),
    PRIMARY KEY (id)
 );
 
 CREATE TABLE client
 (
-   id INT,
+   id SERIAL NOT NULL,
    name VARCHAR CHECK (LENGTH(name) >= 2 and LENGTH(name) <=1000),
    PRIMARY KEY (id)
 );
 
 CREATE TABLE project
 (
-   id INT,
+   id SERIAL NOT NULL,
    client_id INT,
    start_date DATE,
    finish_date DATE,
@@ -35,7 +45,5 @@ CREATE TABLE project_worker
 (
    project_id INT,
    worker_id INT,   
-   PRIMARY KEY (project_id, worker_id),
-   FOREIGN KEY (project_id) REFERENCES project (id),
-   FOREIGN KEY (worker_id) REFERENCES worker (id)
+   PRIMARY KEY (project_id, worker_id)
 );
